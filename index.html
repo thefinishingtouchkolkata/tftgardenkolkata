@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Finishing Touch – Landscape Product Catalog</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <img src="assets/logo.png" alt="The Finishing Touch Logo" />
+        <div class="titles">
+          <h1>The Finishing Touch – Landscape Product Catalog</h1>
+          <p class="subtitle">Planters • Plants • Outdoor Furniture • Pebbles • Pergolas</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="adminToggle" class="btn outline">Admin</button>
+        <button id="exportCsv" class="btn outline">Export CSV</button>
+        <button id="printBtn" class="btn outline">Print / PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls">
+      <input id="searchInput" placeholder="Search name, SKU or description" />
+      <select id="categoryFilter">
+        <option value="All">All categories</option>
+        <option>Planter</option>
+        <option>Plant</option>
+        <option>Furniture</option>
+        <option>Pebbles</option>
+        <option>Pergola</option>
+      </select>
+    </section>
+
+    <section class="content">
+      <div class="grid" id="productGrid">
+        <!-- cards injected by app.js -->
+      </div>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Shortlist <span id="shortlistCount" class="badge">0</span></h3>
+          <div id="shortlistPane" class="vstack small muted">No items shortlisted yet.</div>
+          <button id="copyShortlist" class="btn block outline">Copy shortlist</button>
+        </div>
+
+        <div class="card admin-only" id="adminCard">
+          <h3>Add / Edit Product</h3>
+          <form id="productForm">
+            <input name="id" type="hidden" />
+            <label>Product name<input name="name" required /></label>
+            <label>Category
+              <select name="category">
+                <option>Planter</option>
+                <option>Plant</option>
+                <option>Furniture</option>
+                <option>Pebbles</option>
+                <option>Pergola</option>
+              </select>
+            </label>
+            <label>Price (e.g. ₹2,500)<input name="price" /></label>
+            <label>Size / Dimensions<input name="size" /></label>
+            <label>SKU / Code<input name="sku" /></label>
+            <label>Description<textarea name="description" rows="3"></textarea></label>
+            <label>Image
+              <input name="image" type="file" accept="image/*" />
+            </label>
+            <div class="hstack gap">
+              <button class="btn" type="submit">Save</button>
+              <button class="btn outline" type="button" id="resetForm">Reset</button>
+              <button class="btn danger outline" type="button" id="clearAll">Clear all</button>
+            </div>
+          </form>
+          <p class="muted small">Images are stored locally in your browser (base64). Use high quality photos when sharing with clients.</p>
+        </div>
+
+        <div class="card">
+          <h3>Enquiry</h3>
+          <p class="small">Click WhatsApp on any product card to share with a client, or copy details.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <strong>Head Office</strong><br/>
+        298, FE Block Lane, FE Block, Sector III,<br/>
+        Salt Lake, Kolkata, West Bengal – 700106
+      </div>
+      <div>
+        <strong>Garden Centre</strong><br/>
+        Swiss Complex, Plot #01,<br/>
+        Beside Gate #03 of KLC Complex,<br/>
+        Bantala, Bhangar, Kolkata, West Bengal – 743502
+      </div>
+      <div>
+        <strong>Contact</strong><br/>
+        +91 98041 68324 · +91 98303 37087<br/>
+        <a href="mailto:thefinishingtouchkolkata@gmail.com">thefinishingtouchkolkata@gmail.com</a><br/>
+        <a href="mailto:info@thefinishingtouchstudio.in">info@thefinishingtouchstudio.in</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
